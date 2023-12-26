@@ -1,5 +1,6 @@
 package com.senla.weather.integration;
 
+import com.senla.weather.dto.Weather;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
