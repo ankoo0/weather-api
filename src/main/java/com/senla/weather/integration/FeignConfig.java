@@ -13,7 +13,6 @@ public class FeignConfig {
     @Value("${integration.weather-api.host}")
     private String host;
 
-
     @Bean
     public RequestInterceptor requestInterceptor() {
         return requestTemplate -> {

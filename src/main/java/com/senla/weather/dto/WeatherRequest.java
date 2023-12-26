@@ -4,10 +4,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public record Weather(
+public record WeatherRequest(
         @JsonProperty(value = "location")
-        LocationDto location,
+        Location location,
         @JsonProperty(value = "current")
-        CurrentDto current
+        Current current
 ) {
 }

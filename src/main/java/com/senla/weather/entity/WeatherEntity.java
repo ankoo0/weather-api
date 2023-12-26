@@ -5,11 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.UUID;
-
 
 @Entity
 @NoArgsConstructor
@@ -21,14 +19,17 @@ public class WeatherEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column( columnDefinition = "uuid", updatable = false )
+    @Column(columnDefinition = "uuid", updatable = false)
     private UUID id;
     private String name;
     private String country;
     private LocalDateTime updatedAt;
+    @Column(columnDefinition = "DECIMAL(10,2)")
     private Double tempInCelsius;
     private String currentWeather;
+    @Column(columnDefinition = "DECIMAL(10,2)")
     private Double windInMps;
+    @Column(columnDefinition = "DECIMAL(10,2)")
     private Double pressureInMb;
     private Integer humidity;
 

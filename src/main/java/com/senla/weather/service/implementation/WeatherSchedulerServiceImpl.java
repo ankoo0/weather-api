@@ -1,7 +1,9 @@
-package com.senla.weather.service;
+package com.senla.weather.service.implementation;
 
-import com.senla.weather.dto.Weather;
+import com.senla.weather.dto.WeatherRequest;
 import com.senla.weather.integration.WeatherFeignClient;
+import com.senla.weather.service.WeatherSchedulerService;
+import com.senla.weather.service.WeatherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -16,10 +18,10 @@ public class WeatherSchedulerServiceImpl implements WeatherSchedulerService {
     @Value("${city.latitude}" + "," + "${city.longitude}")
     private String location;
 
-    @Scheduled(fixedDelay = 10000)
+    @Scheduled(fixedDelayString ="${integration.weather-api.delay}")
     @Override
     public void getDataFromApi() {
-        Weather weather = weatherFeignClient.getLatestWeatherInfo(location);
-        weatherService.save(weather);
+        WeatherRequest weatherRequest = weatherFeignClient.getLatestWeatherInfo(location);
+        weatherService.save(weatherRequest);
     }
 }

@@ -3,8 +3,10 @@ package com.senla.weather.controller;
 import com.senla.weather.request.WeatherPeriodRequest;
 import com.senla.weather.response.AverageTemperatureResponse;
 import com.senla.weather.response.LatestWeatherResponse;
-import com.senla.weather.service.WeatherSchedulerServiceImpl;
-import com.senla.weather.service.WeatherServiceImpl;
+import com.senla.weather.service.implementation.WeatherSchedulerServiceImpl;
+import com.senla.weather.service.implementation.WeatherServiceImpl;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -19,12 +21,26 @@ public class WeatherController {
     private final WeatherServiceImpl weatherService;
 
     @GetMapping
+    @Operation(description = "Returns the latest weather information")
     LatestWeatherResponse getLatestWeather() {
         return weatherService.getLatestWeather();
     }
 
     @PostMapping
-    AverageTemperatureResponse getAverageTemperature(@Valid @RequestBody WeatherPeriodRequest periodRequest) {
+    @Operation(description = "Returns the average temperature for the given period")
+    @Parameter(
+            name =  "periodRequest",
+            description  = "Chosen period to retrieve average temperature",
+            example = """
+                      {
+                      “from”: “27-12-2023”,
+                      “to”: “27-12-2023”
+                      }
+                      """,
+            required = true)
+    AverageTemperatureResponse getAverageTemperature(@Valid
+                                                     @RequestBody
+                                                     WeatherPeriodRequest periodRequest) {
         return weatherService.getAverageTemperatureByPeriod(periodRequest);
     }
 }

@@ -1,6 +1,6 @@
 package com.senla.weather.integration;
 
-import com.senla.weather.dto.Weather;
+import com.senla.weather.dto.WeatherRequest;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,5 +13,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface WeatherFeignClient {
 
     @GetMapping("/current.json")
-    Weather getLatestWeatherInfo(@RequestParam("q") String latLong);
+    WeatherRequest getLatestWeatherInfo(@RequestParam("q") String latLong);
 }

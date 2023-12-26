@@ -1,6 +1,6 @@
 package com.senla.weather.mappers;
 
-import com.senla.weather.dto.Weather;
+import com.senla.weather.dto.WeatherRequest;
 import com.senla.weather.entity.WeatherEntity;
 import com.senla.weather.response.LatestWeatherResponse;
 import lombok.experimental.UtilityClass;
@@ -9,15 +9,15 @@ import java.time.LocalDateTime;
 @UtilityClass
 public class WeatherMapper {
 
-  public static WeatherEntity fromDtoToEntity(Weather weather) {
+  public static WeatherEntity fromDtoToEntity(WeatherRequest weatherRequest) {
       WeatherEntity weatherEntity = new WeatherEntity();
-      weatherEntity.setName(weather.location().name());
-      weatherEntity.setCountry(weather.location().country());
-      weatherEntity.setCurrentWeather(weather.current().conditionDto().text());
-      weatherEntity.setHumidity(weather.current().humidity());
-      weatherEntity.setPressureInMb(weather.current().pressure_mb());
-      weatherEntity.setTempInCelsius(weather.current().temp_c());
-      weatherEntity.setWindInMps(convertKphToMps(weather.current().wind_kph()));
+      weatherEntity.setName(weatherRequest.location().name());
+      weatherEntity.setCountry(weatherRequest.location().country());
+      weatherEntity.setCurrentWeather(weatherRequest.current().condition().currentWeather());
+      weatherEntity.setHumidity(weatherRequest.current().humidity());
+      weatherEntity.setPressureInMb(weatherRequest.current().pressureInMb());
+      weatherEntity.setTempInCelsius(weatherRequest.current().tempInCelsius());
+      weatherEntity.setWindInMps(convertKphToMps(weatherRequest.current().windInKph()));
       weatherEntity.setUpdatedAt(LocalDateTime.now());
       return weatherEntity;
   }
