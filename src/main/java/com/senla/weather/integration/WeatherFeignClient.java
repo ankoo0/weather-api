@@ -13,5 +13,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface WeatherFeignClient {
 
     @GetMapping("/current.json")
-    Weather getLatestWeather(@RequestParam("q") String latLong);
+    Weather getLatestWeatherInfo(@RequestParam("q") String latLong);
 }

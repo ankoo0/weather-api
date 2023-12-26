@@ -5,11 +5,11 @@ import java.time.LocalDateTime;
 public record LatestWeatherResponse(
         String name,
         String country,
-        LocalDateTime lastUpdated,
-        Double tempC,
+        LocalDateTime updatedAt,
+        Double tempInCelsius,
         String currentWeather,
-        Double windMps,
-        Double pressureMb,
+        Double windInMps,
+        Double pressureInMb,
         Integer humidity
 ) {
 }

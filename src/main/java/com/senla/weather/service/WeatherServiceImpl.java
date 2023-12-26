@@ -2,7 +2,7 @@ package com.senla.weather.service;
 
 import com.senla.weather.dto.Weather;
 import com.senla.weather.entity.WeatherEntity;
-import com.senla.weather.mapper.WeatherMapper;
+import com.senla.weather.mappers.WeatherMapper;
 import com.senla.weather.repository.WeatherRepository;
 import com.senla.weather.request.WeatherPeriodRequest;
 import com.senla.weather.response.AverageTemperatureResponse;
@@ -28,7 +28,7 @@ public class WeatherServiceImpl implements WeatherService {
 
     @Override
     public LatestWeatherResponse getLatestWeather() {
-        return WeatherMapper.fromEntityToLatestWeatherResponse(weatherRepository.findFirstByOrderByLastUpdatedDesc());
+        return WeatherMapper.fromEntityToLatestWeatherResponse(weatherRepository.findFirstByOrderByUpdatedAtDesc());
     }
 
     @Override

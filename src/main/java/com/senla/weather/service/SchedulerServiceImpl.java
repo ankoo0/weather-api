@@ -10,13 +10,13 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class SchedulerServiceImpl implements SchedulerService {
 
-    public final WeatherFeignClient feignClient;
+    public final WeatherFeignClient weatherFeignClient;
     public final WeatherService weatherService;
 
     @Scheduled(fixedDelay = 10000)
     @Override
     public void getDataFromApi() {
-        Weather weather = feignClient.get("53.90060110,27.55897200");
+        Weather weather = weatherFeignClient.getLatestWeatherInfo("53.90060110,27.55897200");
         weatherService.save(weather);
     }
 }

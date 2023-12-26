@@ -1,11 +1,13 @@
 package com.senla.weather.controller;
 
+import com.senla.weather.request.WeatherPeriodRequest;
+import com.senla.weather.response.AverageTemperatureResponse;
+import com.senla.weather.response.LatestWeatherResponse;
+import com.senla.weather.service.SchedulerServiceImpl;
+import com.senla.weather.service.WeatherServiceImpl;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import static com.senla.weather.controller.PathUtils.ROOT;
 
@@ -23,7 +25,7 @@ public class WeatherController {
     }
 
     @PostMapping
-    Double getAverageTemperature(@Valid WeatherPeriodRequest periodRequest) {
+    AverageTemperatureResponse getAverageTemperature(@Valid @RequestBody WeatherPeriodRequest periodRequest) {
         return weatherService.getAverageTemperatureByPeriod(periodRequest);
     }
 }
