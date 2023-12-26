@@ -1,9 +1,5 @@
 package com.senla.weather.controller;
 
-import com.senla.weather.request.WeatherPeriodRequest;
-import com.senla.weather.response.LatestWeatherResponse;
-import com.senla.weather.service.impl.SchedulerServiceImpl;
-import com.senla.weather.service.impl.WeatherServiceImpl;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
