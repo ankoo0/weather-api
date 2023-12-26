@@ -4,7 +4,6 @@ import com.senla.weather.dto.Weather;
 import com.senla.weather.entity.WeatherEntity;
 import com.senla.weather.response.LatestWeatherResponse;
 import lombok.experimental.UtilityClass;
-
 import java.time.LocalDateTime;
 
 @UtilityClass

@@ -1,18 +1,25 @@
 package com.senla.weather.integration;
 
 import feign.RequestInterceptor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class FeignConfig {
 
+    @Value("${integration.weather-api.key}")
+    private String apiKey;
+    @Value("${integration.weather-api.host}")
+    private String host;
+
+
     @Bean
     public RequestInterceptor requestInterceptor() {
         return requestTemplate -> {
             requestTemplate.header("Accept", "application/json");
-            requestTemplate.header("X-RapidAPI-Key", "e850b19bfcmshfe7aea336ee5198p1bb5e3jsn2fcd74fc3057");
-            requestTemplate.header("X-RapidAPI-Host","weatherapi-com.p.rapidapi.com");
+            requestTemplate.header("X-RapidAPI-Key", apiKey);
+            requestTemplate.header("X-RapidAPI-Host",host);
         };
     }
 

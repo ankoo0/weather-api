@@ -3,12 +3,11 @@ package com.senla.weather.controller;
 import com.senla.weather.request.WeatherPeriodRequest;
 import com.senla.weather.response.AverageTemperatureResponse;
 import com.senla.weather.response.LatestWeatherResponse;
-import com.senla.weather.service.SchedulerServiceImpl;
+import com.senla.weather.service.WeatherSchedulerServiceImpl;
 import com.senla.weather.service.WeatherServiceImpl;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 import static com.senla.weather.controller.PathUtils.ROOT;
 
 @RestController
@@ -16,7 +15,7 @@ import static com.senla.weather.controller.PathUtils.ROOT;
 @RequestMapping(ROOT)
 public class WeatherController {
 
-    private final SchedulerServiceImpl schedulerService;
+    private final WeatherSchedulerServiceImpl schedulerService;
     private final WeatherServiceImpl weatherService;
 
     @GetMapping

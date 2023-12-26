@@ -5,12 +5,11 @@ spring:
     password: admin
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
 
-weather:
-  city:
-    lattitude: "53.90060110"
-    longitude: "27.55897200"
+city:
+  latitude: "53.90060110"
+  longitude: "27.55897200"
 
 integration:
   weather-api:

@@ -1,6 +1,6 @@
 package com.senla.weather.service;
 
-public interface SchedulerService {
+public interface WeatherSchedulerService {
 
     void getDataFromApi();
 }
