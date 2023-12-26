@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/weather
+    username: postgres
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+weather:
+  city:
+    lattitude: "53.90060110"
+    longitude: "27.55897200"
+
+integration:
+  weather-api:
+    url: "https://weatherapi-com.p.rapidapi.com"
+    key: "e850b19bfcmshfe7aea336ee5198p1bb5e3jsn2fcd74fc3057"
+    host: "weatherapi-com.p.rapidapi.com"
+
