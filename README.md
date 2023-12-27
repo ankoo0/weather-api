@@ -25,7 +25,7 @@ In order to run this app you should have Docker installed on your machine
 
 2. Open a terminal and navigate to the project directory.
 
-3. Run docker-compose up
+3. Run docker-compose up *don't forget to add project root directory to Docker file sharing or compose will stuck in infinite loop 
 
 4. When the application is running, open your browser and go to http://localhost:8080/swagger-ui/index.html to test endpoints.
 
