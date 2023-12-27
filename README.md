@@ -33,3 +33,5 @@ You can use the provided samples or create your own requests, but be aware that 
 I created init SQL script, so you can request information starting from 23-12-2023
 
 Alternatively, you can use the Postman collection located in the project root to test the API.
+
+** I'm exposing api key for ease of access but, of course, it's not a good practice)

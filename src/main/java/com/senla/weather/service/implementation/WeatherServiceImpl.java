@@ -2,6 +2,7 @@ package com.senla.weather.service.implementation;
 
 import com.senla.weather.dto.WeatherRequest;
 import com.senla.weather.entity.WeatherEntity;
+import com.senla.weather.exception.InvalidDateRangeException;
 import com.senla.weather.mappers.WeatherMapper;
 import com.senla.weather.repository.WeatherRepository;
 import com.senla.weather.request.WeatherPeriodRequest;
@@ -36,6 +37,10 @@ public class WeatherServiceImpl implements WeatherService {
     public AverageTemperatureResponse getAverageTemperatureByPeriod(WeatherPeriodRequest periodRequest) {
         LocalDate fromDate = periodRequest.from();
         LocalDate toDate = periodRequest.to();
+
+        if (fromDate.isAfter(toDate)) {
+            throw new InvalidDateRangeException("'From' date cannot be after 'To' date");
+        }
 
         LocalDateTime fromDateTime = fromDate.atStartOfDay();
         LocalDateTime toDateTime = toDate.atTime(LocalTime.MAX);

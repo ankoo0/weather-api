@@ -31,6 +31,11 @@ public class ApiExceptionHandler {
         return ProblemDetail.forStatusAndDetail(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
     }
 
+    @ExceptionHandler(InvalidDateRangeException.class)
+    ProblemDetail handleInvalidDateRangeException(InvalidDateRangeException e) {
+        return ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, e.getMessage());
+    }
+
     @ExceptionHandler(HttpMessageNotReadableException.class)
     ProblemDetail handleHttpMessageNotReadableException(HttpMessageNotReadableException e) {
         String problemMessage = e.getRootCause().getMessage();
