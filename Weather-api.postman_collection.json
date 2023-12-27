@@ -1,0 +1,34 @@
+{
+	"info": {
+		"_postman_id": "461c5578-37dc-4a8b-a821-f76c473637a9",
+		"name": "Weather-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28075287"
+	},
+	"item": [
+		{
+			"name": "Get Latest Weather",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get Average Temperature By Period",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Sample API Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

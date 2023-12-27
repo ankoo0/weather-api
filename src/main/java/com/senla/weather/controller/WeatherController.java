@@ -33,7 +33,7 @@ public class WeatherController {
             description  = "Chosen period to retrieve average temperature",
             example = """
                       {
-                      “from”: “27-12-2023”,
+                      “from”: “23-12-2023”,
                       “to”: “27-12-2023”
                       }
                       """,

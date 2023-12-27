@@ -26,8 +26,8 @@ extra["springCloudVersion"] = "2023.0.0"
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
+	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation ("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0")
 	compileOnly("org.projectlombok:lombok")
 	runtimeOnly("org.postgresql:postgresql")
@@ -44,4 +44,8 @@ dependencyManagement {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+tasks.bootJar {
+	archiveBaseName.set("weather-api")
+	archiveVersion.set("")
 }
