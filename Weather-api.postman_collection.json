@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "461c5578-37dc-4a8b-a821-f76c473637a9",
+		"_postman_id": "6d9e4add-5c21-4af5-9adf-77fdc5f3d095",
 		"name": "Weather-api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "28075287"
@@ -10,23 +10,88 @@
 			"name": "Get Latest Weather",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/weather",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"weather"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Get Average Temperature By Period",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"from\": \"23-12-2023\",\r\n\"to\": \"27-12-2023\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/weather",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"weather"
+					]
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "Sample API Request",
+			"name": "Sample Api Call",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [
+					{
+						"key": "X-RapidAPI-Key",
+						"value": "e850b19bfcmshfe7aea336ee5198p1bb5e3jsn2fcd74fc3057",
+						"type": "text"
+					},
+					{
+						"key": "X-RapidAPI-Host",
+						"value": "weatherapi-com.p.rapidapi.com",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://weatherapi-com.p.rapidapi.com/current.json?q=53.90060110,27.55897200",
+					"protocol": "https",
+					"host": [
+						"weatherapi-com",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"current.json"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "53.90060110,27.55897200"
+						}
+					]
+				}
 			},
 			"response": []
 		}

@@ -29,6 +29,7 @@ dependencies {
 	implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation ("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0")
+	implementation("net.logstash.logback:logstash-logback-encoder:7.4")
 	compileOnly("org.projectlombok:lombok")
 	runtimeOnly("org.postgresql:postgresql")
 	annotationProcessor("org.projectlombok:lombok")
