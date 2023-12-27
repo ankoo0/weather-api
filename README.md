@@ -21,9 +21,7 @@ In order to run this app you should have Docker installed on your machine
 
 ## Installation
 
-1. Clone the repository:
-
-git clone https://github.com/ankoo0/weather-api.git
+1. Clone the repository: git clone https://github.com/ankoo0/weather-api.git
 
 2. Open a terminal and navigate to the project directory.
 
