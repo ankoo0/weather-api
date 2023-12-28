@@ -9,7 +9,7 @@ In order to run this app you should have Docker installed on your machine
 - Spring Data JPA
 - Spring Web MVC
 - Spring Cloud OpenFeign
-- Spring Boot Validation: Enables validation of request data.
+- Spring Boot Validation
 - SpringDoc OpenAPI
 - Logstash
 - Lombok
@@ -29,7 +29,7 @@ In order to run this app you should have Docker installed on your machine
 
 4. When the application is running, open your browser and go to http://localhost:8080/swagger-ui/index.html to test endpoints.
 
-You can use the provided samples or create your own requests, but be aware that application considers valid only dd-MM-yyyy date format
+You can use the provided samples or create your own requests, but be aware that application considers valid only dd-MM-yyyy date format.
 I created init SQL script, so you can request information starting from 23-12-2023
 
 Alternatively, you can use the Postman collection located in the project root to test the API.
