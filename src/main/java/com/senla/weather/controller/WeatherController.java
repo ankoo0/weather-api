@@ -3,6 +3,8 @@ package com.senla.weather.controller;
 import com.senla.weather.request.WeatherPeriodRequest;
 import com.senla.weather.response.AverageTemperatureResponse;
 import com.senla.weather.response.LatestWeatherResponse;
+import com.senla.weather.service.WeatherSchedulerService;
+import com.senla.weather.service.WeatherService;
 import com.senla.weather.service.implementation.WeatherSchedulerServiceImpl;
 import com.senla.weather.service.implementation.WeatherServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
@@ -17,8 +19,8 @@ import static com.senla.weather.controller.PathUtils.ROOT;
 @RequestMapping(ROOT)
 public class WeatherController {
 
-    private final WeatherSchedulerServiceImpl schedulerService;
-    private final WeatherServiceImpl weatherService;
+    private final WeatherSchedulerService schedulerService;
+    private final WeatherService weatherService;
 
     @GetMapping
     @Operation(description = "Returns the latest weather information")
@@ -33,8 +35,8 @@ public class WeatherController {
             description  = "Chosen period to retrieve average temperature",
             example = """
                       {
-                      “from”: “23-12-2023”,
-                      “to”: “27-12-2023”
+                      "from": "23-12-2023",
+                      "to": “27-12-2023"
                       }
                       """,
             required = true)
