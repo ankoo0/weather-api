@@ -36,7 +36,7 @@ public class WeatherController {
             example = """
                       {
                       "from": "23-12-2023",
-                      "to": “27-12-2023"
+                      "to": "27-12-2023"
                       }
                       """,
             required = true)
